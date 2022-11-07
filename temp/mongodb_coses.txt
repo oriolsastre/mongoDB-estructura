@@ -1,0 +1,26 @@
+Instruccions per a la consola:
+
+"mongod" per iniciar el servidor
+"mongo" per entrar al shell i començar a donar instruccions.
+
+
+Algunes ordres bàsiques
+    - show dbs
+    - show collections
+
+    - use "db ${name}"
+    - db.${collection name} per a crear una col·lecció.
+    -.insertOne()
+    -.insertMany([])
+    -.find(){.pretty()}
+    -.findOne()
+
+    -.updateOne()
+    -.updateMany()
+    -.replaceOne()
+
+    -.deleteOne()
+    -.deleteMany()
+
+    -.dropDatabase()
+    - db.${collection}.drop
