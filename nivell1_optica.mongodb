@@ -1,0 +1,4 @@
+//com un delete if exists;
+db.dropDatabase();
+
+db.createCollection('ulleres');
