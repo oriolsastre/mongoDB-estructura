@@ -1,0 +1,30 @@
+{
+  "name": "mongodb_osr",
+  "version": "1.0.0",
+  "description": "Aprendre a fer servir bases de dades de mongoDB",
+  "main": "nivell1_optica.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oriolsastre/mongoDB-estructura.git"
+  },
+  "keywords": [
+    "mongodb",
+    "db",
+    "base",
+    "de",
+    "dades",
+    "database"
+  ],
+  "author": "Oriol Sastre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oriolsastre/mongoDB-estructura/issues"
+  },
+  "homepage": "https://github.com/oriolsastre/mongoDB-estructura#readme",
+  "dependencies": {
+    "mongodb": "^4.11.0"
+  }
+}
