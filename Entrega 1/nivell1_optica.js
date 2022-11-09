@@ -82,12 +82,7 @@ db.createCollection('ullera', {
                     bsonType: "array",
                     minItems: 2,
                     items: {
-                        bsonType: "double"/* ,
-                        required: ["esquerra", "dreta"],
-                        properties: {
-                            esquerra: {bsonType: "double"},
-                            dreta: {bsonType: "double"}
-                        } */
+                        bsonType: "double"
                     }
                 },
                 muntura: {enum: ["Flotant", "Pasta", "Metàl·lica"]},
@@ -95,14 +90,6 @@ db.createCollection('ullera', {
                 color_vidre: {
                     bsonType: "array",
                     minItems: 2
-                    /* items: {
-                        bsonType: "object",
-                        required: ["esquerra", "dreta"],
-                        properties: {
-                            esquerra: {bsonType: "string"},
-                            dreta: {bsonType: "string"}
-                        }
-                    } */
                 },
                 preu: {bsonType: "double"},
                 venda: {
@@ -192,7 +179,7 @@ db.marca.insertMany([{
     proveidor: 2
 }])
 
-db.ullera.insertOne({
+db.ullera.insertMany([{
     marca: NumberInt(2),
     graduacio: [0.25,3.75],
     color_vidre: [null, null],
@@ -202,6 +189,18 @@ db.ullera.insertOne({
     venda: {
         client: NumberInt(1),
         venedor: "Joan Petit",
-        data: new Date(2022-09-01)
+        data: new Date("2022-09-01")
     }
-})
+},{
+    marca: NumberInt(1),
+    graduacio: [-0.25,-0.75],
+    color_vidre: ["groc", "groc"],
+    muntura: "Metàl·lica",
+    color_muntura: "Verd",
+    preu: 178,
+    venda: {
+        client: NumberInt(2),
+        venedor: "Joan Petit",
+        data: new Date("2022-08-25")
+    }
+}])
