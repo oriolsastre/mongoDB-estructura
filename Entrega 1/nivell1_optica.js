@@ -109,8 +109,6 @@ db.createCollection('ullera', {
 
 
 //inserir dades
-db.proveidor;
-
 db.client.insertMany([{
     _id: NumberInt(1),
     nom: "Oriol", cognom: "Sastre Rienitz",

@@ -26,3 +26,7 @@ db.restaurant.find().sort({name: 1});
 db.restaurant.find().sort({name: -1});
 db.restaurant.find().sort({cuisine: 1, borough: -1});
 db.restaurant.find({"address.street": {$exists: true, $ne: null, $ne: ""}});
+db.restaurant.find({"address.coord.0": {$type: "double"}, "address.coord.1": {$type: "double"}});
+db.restaurant.find({"grades.score": {$mod: [7,0]}}, {restaurant_id: 1, name: 1, "grades.grade": 1, _id:0});
+db.restaurant.find({name: /mon/i}, {name: 1, borough: 1, "address.coord": 1, cuisine: 1, _id:0});
+db.restaurant.find({name: /^Mad/i}, {name: 1, borough: 1, "address.coord": 1, cuisine: 1, _id:0});
