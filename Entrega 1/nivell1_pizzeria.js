@@ -93,7 +93,8 @@ db.createCollection('comanda', {
                         bsonType: "object",
                         required: ["producte", "quantitat"],
                         properties: {quantitat: {bsonType: "integer"}}
-                    }
+                    },
+                    additionalItems: false
                     
                 },
                 domicili: {

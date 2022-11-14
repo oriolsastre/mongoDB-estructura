@@ -81,6 +81,7 @@ db.createCollection('ullera', {
                 graduacio: {
                     bsonType: "array",
                     minItems: 2,
+                    maxItems: 2,
                     items: {
                         bsonType: "double"
                     }
@@ -89,7 +90,8 @@ db.createCollection('ullera', {
                 color_muntura: {bsonType: "string"},
                 color_vidre: {
                     bsonType: "array",
-                    minItems: 2
+                    minItems: 2,
+                    maxItems: 2,
                 },
                 preu: {bsonType: "double"},
                 venda: {
