@@ -4,27 +4,24 @@
 
 ![Diagrama](nivell1_optica_diagrama.png)
 
-En negreta els valors requerits.s
 
 ## Nivell 1 - Exercici 2 - Pizzeria
 
 ![Diagrama](nivell1_pizzeria_diagrama.png)
 
-En la comanda, el contingut és un array d'obejctes, en el qual cada objecte hi ha especificat 1 producte i la quantiat d'aquest producte.
+En la col·lecció productes hi ha 3 documents. 1 per pizzes, 1 per hamburgueses i 1 per begudes, especificat pel valor tipus.
 
-En la comanda, la data de repartiment no està requerida ja que quan s'accepta la comanda, aquest valor seria _NULL_ fins que no és repartida.
+En el cas de les pizzes, hi ha l'array categories, on cada item és una categoria diferent, i aleshores, un array dintre amb les diverses pizzes.
+
+Pel cas de les begudes i hamburgueses, senzillament estaran tots al primer item de l'array categories, sense haver d'especificar ni cap id ni cap nom de categoria.
+
+És cert que potser la col·lecció client podria estar dintre de la col·lecció botiga si es tractés d'una cadena humil de pizzeries on s'espera que un client només visiti una botiga regularment. Tanmateix, en una gran cadena on el client és més probable que visiti botigues diferents, crec que no interessaria tenir la informació repartida en documents diferents sense actualitzar-se fàcilment.
 
 ## Nivell 2 - Youtube
 
 ![Diagrama](nivell2_youtube_diagrama.png)
 
 El tema de les etiqutes i la necessitat que tinguin un identificador únic.
-
-<!--
-Unique items
-https://www.mongodb.com/docs/atlas/app-services/schemas/enforce-a-schema/
-
--->
 
 ## Nivell 3 - Spotify
 
