@@ -30,24 +30,27 @@ db.createCollection('client', {
                     }
                 }, comanda: {
                     bsonType: "array",
-                    required: ["_id","botiga", "preu", "contingut"],
-                    properties: {
-                        botiga: {bsonType: "number"},
-                        domicili: {
-                            bsonType: "object",
-                            required: ["repartidor", "data_hora"],
-                            properties: {
-                                data_hora: {bsonType: "date"}
-                            }
-                        }, preu: {bsonType: "double"},
-                        contingut: {
-                            bsonType: "array",
-                            minItems: 1,
-                            items: {
+                    items: {
+                        bsonType: "object",
+                        required: ["_id","botiga", "preu", "contingut"],
+                        properties: {
+                            botiga: {bsonType: "number"},
+                            domicili: {
                                 bsonType: "object",
-                                required: ["producte", "quantitat"],
+                                required: ["repartidor", "data_hora"],
                                 properties: {
-                                    quantitat: {bsonType: "number"}
+                                    data_hora: {bsonType: "date"}
+                                }
+                            }, preu: {bsonType: "double"},
+                            contingut: {
+                                bsonType: "array",
+                                minItems: 1,
+                                items: {
+                                    bsonType: "object",
+                                    required: ["producte", "quantitat"],
+                                    properties: {
+                                        quantitat: {bsonType: "number"}
+                                    }
                                 }
                             }
                         }
@@ -209,4 +212,29 @@ db.producte.insertMany([{
             preu: 7.99
         }]
     }]
-}])
+}]);
+
+db.client.insertOne({
+    dades_personals: {
+        nom: "Oriol",
+        cognoms: "Sastre Rienitz"
+    }, dades_contacte: {
+        adreca: {
+            carrer: "Provença",
+            numero: "5",
+            ciutat: "Barcelona",
+            codi_postal: "08040",
+            provincia: "Barcelona"
+        }, telefon: "931894568"
+    }, comanda: [{
+        _id: 1, botiga: 1, preu: 10.99, contingut: [
+            {producte: 3, quantitat: 1},
+            {producte: 6, quantitat: 1}
+        ]
+    }, {
+        _id: 2, botiga: 2, domicili: {repartidor: 1, data_hora: new Date()}, preu: 11.99, contingut: [
+            {producte: 4, quantitat: 1},
+            {producte: 5, quantitat: 2}
+        ]
+    }]
+})

@@ -21,7 +21,11 @@ Pel cas de les begudes i hamburgueses, senzillament estaran tots al primer item 
 
 ![Diagrama](nivell2_youtube_diagrama.png)
 
-El tema de les etiqutes i la necessitat que tinguin un identificador únic.
+És en realitat tot una única col·lecció, el que passa és que s'em feia massa llarga i l'he separat en dos, però és la continuació. L'array comentaris està dins d'un objecte vídeo.
+
+En vermell hi ha l'array resposta. Això en realitat pot ser iteratiu. Cada objecte comentari, pot contenir un array amb les respostes rebudes, i a la vegada cada resposta que tindria l'estructura d'un objecte comentari (amb id, usuari, text, data_hora, feedback), a la vegada pot contenir un array amb més respostes.
+
+La idea és que un usuari pot crear canals, en els canals hi pot publicar vídeos, i els vídeos poden contenir comentaris. A més, un usuari també pot crear playlists.
 
 ## Nivell 3 - Spotify
 
